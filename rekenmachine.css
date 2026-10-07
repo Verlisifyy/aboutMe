@@ -1,0 +1,168 @@
+/* Algemene opmaak */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f8f1f2, #e4c7cb);
+    color: #870f1d;
+}
+
+/* Rekenkundige container */
+.rekenmachine {
+    width: 100%;
+    max-width: 360px;
+    padding: 25px;
+
+    background-color: #ffffff;
+    border: 2px solid #870f1d;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(70, 0, 10, 0.25);
+}
+
+/* Titel */
+.rekenmachine h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+    color: #870f1d;
+}
+
+/* Scherm van de rekenmachine */
+#display {
+    width: 100%;
+    height: 75px;
+    margin-bottom: 18px;
+    padding: 15px;
+
+    border: 2px solid #d8b1b7;
+    border-radius: 12px;
+    outline: none;
+
+    background-color: #fff7f8;
+    color: #870f1d;
+
+    font-size: 30px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Rand bij aanklikken */
+#display:focus {
+    border-color: #870f1d;
+    box-shadow: 0 0 0 3px rgba(135, 15, 29, 0.15);
+}
+
+/* Knoppenoverzicht */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Algemene knoppen */
+.buttons button {
+    height: 60px;
+
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background-color: #f0dadd;
+    color: #870f1d;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hovereffect */
+.buttons button:hover {
+    background-color: #870f1d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(135, 15, 29, 0.25);
+}
+
+/* Klikanimatie */
+.buttons button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+/* Rekenkundige knoppen */
+.buttons .operator {
+    background-color: #870f1d;
+    color: #ffffff;
+}
+
+.buttons .operator:hover {
+    background-color: #650b16;
+}
+
+/* Wissen-knop */
+.buttons .clear {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.buttons .clear:hover {
+    background-color: #111111;
+}
+
+/* Is-gelijk-knop */
+.buttons .equals {
+    grid-column: span 2;
+    background-color: #870f1d;
+    color: #ffffff;
+}
+
+.buttons .equals:hover {
+    background-color: #650b16;
+}
+
+/* Knop die twee vakken breed is */
+.buttons .wide {
+    grid-column: span 2;
+}
+
+/* Mobiele schermen */
+@media (max-width: 420px) {
+    .rekenmachine {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    #display {
+        height: 65px;
+        font-size: 25px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+
+    .buttons button {
+        height: 55px;
+        font-size: 18px;
+    }
+}
+#display.boven-100 {
+    background-color: #870f1d;
+    color: white;
+    border-color: #650b16;
+}
